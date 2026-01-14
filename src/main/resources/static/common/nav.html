@@ -26,19 +26,19 @@
                 var htmlContent = "";
 
                 // 1. 首页
-                htmlContent += '<li><a href="/index.html">首页</a></li>';
+                htmlContent += '<li><a href="/pages/index.html">首页</a></li>';
 
                 // 2. 动态菜单
                 if(data && data.length > 0) {
                     $.each(data, function(index, item) {
                         // 构造链接：调用 Controller 进行跳转
-                        var url = "/toIndex/getuserManagement.do?tid=" + item.id;
+                        var url = "/pages/course.html?tid=" + item.id;
                         htmlContent += '<li><a href="' + url + '">' + item.name + '</a></li>';
                     });
                 }
 
                 // 3. 个人中心 (假设也跳转到用户管理页，或者您可以改为 /user/center.html)
-                htmlContent += '<li><a href="/toIndex/getuserManagement.do">个人中心</a></li>';
+                htmlContent += '<li><a href="/user/userManagement.html">个人中心</a></li>';
 
                 // 渲染
                 $("#daohang").html(htmlContent);
